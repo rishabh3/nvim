@@ -1,1 +1,7 @@
-
+require('plugins')
+require('keymaps')
+require('nv-compe')
+require('settings')
+require('lsp.lua-ls')
+require('colorscheme')
+require('airline')
