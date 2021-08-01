@@ -22,7 +22,7 @@ return require('packer').startup(function()
   use 'glepnir/galaxyline.nvim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
   use 'nvim-telescope/telescope-media-files.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'onsails/lspkind-nvim'
@@ -38,4 +38,5 @@ return require('packer').startup(function()
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'GlennLeo/cobalt2'
+  use {'neoclide/coc.nvim', branch = 'release'}
 end)
