@@ -5,11 +5,17 @@ local map = utils.map
 map('n', '<Space>', '<NOP>', { noremap = true })
 vim.g.mapleader = ' '
 
-map('n', '<Leader>h', ':set hlsearch!<CR>', { noremap = true })
-map('n', '<Leader>n', ':set nu!<CR>', { noremap = true })
+map('n', '<leader>h', ':set hlsearch!<CR>', { noremap = true })
+map('n', '<leader>n', ':set nu!<CR>', { noremap = true })
 
+-- Jump to file from text
+map('n', 'gf', ':vert winc f<CR>', {noremap=true})
+-- copies filepath to clipboard by pressing yf
+map('n', 'yf', ":let @+=expand('%:p')<CR>", {noremap=true})
+-- copies pwd to clipboard command yd
+map('n', 'yd', ":let @+=expand('%:p:h')<CR>", {noremap=true})
 -- nerd tree toggle
-map('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true })
+map('n', '<leader>t', ':NERDTreeToggleVCS<CR>', { noremap = true })
 
 -- window movement
 map('n', '<C-h>', '<C-w>h')
@@ -23,39 +29,41 @@ map('v', '>', '>gv', { noremap = true })
 
 
 -- Tab switch buffer
-map('n', '<TAB>', ':bnext<CR>', { noremap = true })
-map('n', '<S-TAB>', ':bprevious<CR>', { noremap = true })
+map('n', '<leader>bn', ':bnext<CR>', { noremap = true })
+map('n', '<leader>bp', ':bprevious<CR>', { noremap = true })
 
 
 -- Buffer delete
-map('n', '<Leader>-', ':bdelete<CR>', { noremap = true })
+map('n', '<leader>-', ':bdelete<CR>', { noremap = true })
 
 -- Move selceted block of code
-map('x', 'K', ':move \'<-2<CR>gv-gv\'', { noremap = true })
-map('x', 'J', ':move \'<+1<CR>gv-gv\'', { noremap = true })
-
+map('x', '<A-k>', ':move \'<-2<CR>gv-gv\'', { noremap = true })
+map('x', '<A-j>', ':move \'>+1<CR>gv-gv\'', { noremap = true })
 
 -- Split windows
-map('n', '<Leader>s', ':sp<CR>', { noremap = true })
-map('n', '<Leader>v', ':vsp<CR>', { noremap = true })
+map('n', '<leader>s', ':sp<CR>', { noremap = true })
+map('n', '<leader>v', ':vsp<CR>', { noremap = true })
 
 
 -- Coc keymaps
 -- Show all diagnostics
-map('n', '<Leader>a', ':<C-u>CocList diagnostics<CR>', { noremap = true })
+map('n', '<leader>a', ':<C-u>CocList diagnostics<CR>', { noremap = true })
 -- Manage extensions
-map('n', '<Leader>q', ':<C-u>CocList extensions<CR>', { noremap = true })
+map('n', '<leader>q', ':<C-u>CocList extensions<CR>', { noremap = true })
 -- Show commands
-map('n', '<Leader>c', ':<C-u>CocList commands<CR>', { noremap = true })
+map('n', '<leader>c', ':<C-u>CocList commands<CR>', { noremap = true })
 -- Find symbol of current document
-map('n', '<Leader>o', ':<C-u>CocList outline<CR>', { noremap = true })
+map('n', '<leader>o', ':<C-u>CocList outline<CR>', { noremap = true })
 -- Search workspace symbol
-map('n', '<Leader>s', ':<C-u>CocList -I symbols<CR>', { noremap = true })
+map('n', '<leader>s', ':<C-u>CocList -I symbols<CR>', { noremap = true })
 -- Do default action for next item.
-map('n', '<Leader>j', ':<C-u>CocNext<CR>', { noremap = true })
+map('n', '<leader>j', ':<C-u>CocNext<CR>', { noremap = true })
 -- Do default action for previous item
-map('n', '<Leader>k', ':<C-u>CocNext<CR>', { noremap = true })
+map('n', '<leader>k', ':<C-u>CocNext<CR>', { noremap = true })
 -- Resume latest coc list
-map('n', '<Leader>p', ':<C-u>CocListResume<CR>', { noremap = true })
+map('n', '<leader>p', ':<C-u>CocListResume<CR>', { noremap = true })
 
 
+-- Map <C-p> to open project picker
+map('n', '<C-p>', ":lua require'telescope'.extensions.project.project{}<CR>", {noremap = true,
+silent = true})
