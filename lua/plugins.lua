@@ -27,6 +27,6 @@ return require('packer').startup(function()
     use { 'vim-test/vim-test' }
     use { 'tpope/vim-dispatch' }
     use { 'tpope/vim-fugitive' }
-    use { 'neovim/nvim-lspconfig' }
     use { 'GlennLeo/cobalt2' }
+    use { 'airblade/vim-gitgutter' }
 end)
