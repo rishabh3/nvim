@@ -15,5 +15,5 @@ nnoremap <Leader>gm :GMove<Space>
 nnoremap <Leader>gbr :Git branch<Space>
 nnoremap <Leader>gco :Git checkout<Space>
 nnoremap <Leader>gf  :Git fetch<CR>
-nnoremap <Leader>gps :Dispatch! git push<CR>
-nnoremap <Leader>gpl :Dispatch! git pull<CR>
+nnoremap <Leader>gps :Git push -u origin HEAD<CR>
+nnoremap <Leader>gpl :Git pull<CR>
