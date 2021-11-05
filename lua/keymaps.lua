@@ -16,6 +16,7 @@ map('n', 'yf', ":let @+=expand('%:p')<CR>", {noremap=true})
 map('n', 'yd', ":let @+=expand('%:p:h')<CR>", {noremap=true})
 -- nerd tree toggle
 map('n', '<leader>t', ':NERDTreeToggleVCS<CR>', { noremap = true })
+map('n', '<leader>tf', ':NERDTreeFind %<CR>', { noremap = true })
 
 -- window movement
 map('n', '<C-h>', '<C-w>h')
@@ -65,5 +66,5 @@ map('n', '<leader>p', ':<C-u>CocListResume<CR>', { noremap = true })
 
 
 -- Map <C-p> to open project picker
-map('n', '<C-p>', ":lua require'telescope'.extensions.project.project{}<CR>", {noremap = true,
+map('n', '<C-p>', ":lua require'telescope'.extensions.project.project{ display_type='full' }<CR>", {noremap = true,
 silent = true})

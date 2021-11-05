@@ -29,4 +29,5 @@ return require('packer').startup(function()
     use { 'tpope/vim-fugitive' }
     use { 'GlennLeo/cobalt2' }
     use { 'airblade/vim-gitgutter' }
+    use { 'mileszs/ack.vim' }
 end)
