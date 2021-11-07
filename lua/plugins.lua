@@ -30,4 +30,5 @@ return require('packer').startup(function()
     use { 'GlennLeo/cobalt2' }
     use { 'airblade/vim-gitgutter' }
     use { 'mileszs/ack.vim' }
+    use { 'b3nj5m1n/kommentary' }
 end)
