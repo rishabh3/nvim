@@ -13,7 +13,7 @@ local use = require('packer').use
 return require('packer').startup(function()
   -- Packer can manage itself
     use { 'nvim-telescope/telescope-project.nvim' }
-    use { 'neoclide/coc.nvim', branch='release' } 
+    --    use { 'neoclide/coc.nvim', branch='release' } 
     use { 'scrooloose/nerdtree' }
     use { 'honza/vim-snippets' }
     use { 'mhinz/vim-startify' }
@@ -30,4 +30,13 @@ return require('packer').startup(function()
     use { 'GlennLeo/cobalt2' }
     use { 'airblade/vim-gitgutter' }
     use { 'mileszs/ack.vim' }
+    use { 'mfussenegger/nvim-dap' }
+    use { 'nvim-lua/lsp-status.nvim' }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'onsails/lspkind-nvim' }
+    use { 'dcampos/cmp-snippy' }
+    use { 'glepnir/lspsaga.nvim' }
+    use { 'b3nj5m1n/kommentary' }
+    use { 'mhartington/formatter.nvim' }
+    use { 'mfussenegger/nvim-jdtls' }
 end)
