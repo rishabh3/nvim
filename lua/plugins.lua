@@ -21,6 +21,7 @@ return require('packer').startup(function()
     use { 'vim-airline/vim-airline-themes' }
     use { 'preservim/nerdcommenter' }
     use { 'ryanoasis/vim-devicons' }
+    use { 'kyazdani42/nvim-web-devicons' }
     use { 'morhetz/gruvbox' }
     use { 'nvim-lua/plenary.nvim' }
     use { 'nvim-telescope/telescope.nvim' }
