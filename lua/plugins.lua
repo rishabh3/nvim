@@ -39,7 +39,8 @@ return require('packer').startup(function()
     use { 'hrsh7th/cmp-buffer' }
     use { 'hrsh7th/cmp-path' }
     use { 'hrsh7th/cmp-cmdline' }
-    use { 'neovim/nvim-lspconfig' }
     use { 'onsails/lspkind-nvim' }
     use { 'hrsh7th/cmp-nvim-lua' }
+    -- Plugins for lsp setup
+    use { 'neovim/nvim-lspconfig' }
  end)
