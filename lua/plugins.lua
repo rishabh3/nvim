@@ -43,4 +43,5 @@ return require('packer').startup(function()
     use { 'hrsh7th/cmp-nvim-lua' }
     -- Plugins for lsp setup
     use { 'neovim/nvim-lspconfig' }
+    use { 'williamboman/nvim-lsp-installer' }
  end)

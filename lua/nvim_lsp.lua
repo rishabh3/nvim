@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+--[[ local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -42,5 +42,16 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     }
   }
-end
+end ]]
+
+local lsp_installer = require("nvim-lsp-installer");
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    opts.on_attach = on_attach
+    opts.flags = {
+        debounce_text_changes = 150
+    }
+    server:setup(opts)
+end)
 
