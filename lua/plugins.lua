@@ -67,5 +67,8 @@ return require("packer").startup(
                 }
             end
         }
+        use {
+            "ygm2/rooter.nvim"
+        }
     end
 )
