@@ -53,3 +53,4 @@ map(
 map("n", "<C-f>", ":Format<CR>", {noremap = true, silent = true})
 
 map("n", "<leader>qf", ":TroubleToggle<CR>", {noremap = true, silent = true})
+map("n", "<leader>qfr", ":TroubleRefresh<CR>", {noremap = true, silent = true})

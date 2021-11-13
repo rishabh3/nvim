@@ -1,5 +1,3 @@
-print("Setup lspconfig")
-
 local nvim_lsp = require'lspconfig'
 
 local on_attach = function(client, bufnr)

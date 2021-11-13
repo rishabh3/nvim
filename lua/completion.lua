@@ -1,5 +1,3 @@
-print("Load completion setup engine")
-
 local lspkind = require "lspkind"
 lspkind.init()
 
