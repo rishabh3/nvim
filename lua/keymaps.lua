@@ -54,3 +54,28 @@ map("n", "<C-f>", ":Format<CR>", {noremap = true, silent = true})
 
 map("n", "<leader>qf", ":TroubleToggle<CR>", {noremap = true, silent = true})
 map("n", "<leader>qfr", ":TroubleRefresh<CR>", {noremap = true, silent = true})
+
+map("n", "<leader>ff", ":lua require'telescope.builtin'.find_files()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fg", ":lua require'telescope.builtin'.live_grep()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fk", ":lua require'telescope.builtin'.keymaps()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fr", ":lua require'telescope.builtin'.lsp_references()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fd", ":lua require'telescope.builtin'.lsp_definitions()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>ftd", ":lua require'telescope.builtin'.lsp_type_definitions()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fi", ":lua require'telescope.builtin'.lsp_implementations()<cr>", {noremap = true, silent = true})
+
+map("n", "<leader>fb", ":Telescope buffers<cr>", {noremap = true, silent = true})
+map("n", "<leader>fh", ":Telescope help_tags<cr>", {noremap = true, silent = true})
+map("n", "<leader>fgs", ":Telescope git_status<cr>", {noremap = true, silent = true})
+map("n", "<leader>fgc", ":Telescope git_commits<cr>", {noremap = true, silent = true})
+map("n", "<leader>fgb", ":Telescope git_branches<cr>", {noremap = true, silent = true})
+map("n", "<leader>fm", ":Telescope marks<cr>", {noremap = true, silent = true})
+map("n", "<leader>fj", ":Telescope jumplist<cr>", {noremap = true, silent = true})
+map("n", "<leader>fc", ":Telescope lsp_code_actions<cr>", {noremap = true, silent = true})
+map("n", "<leader>fcs", ":Telescope colorscheme<cr>", {noremap = true, silent = true})
+map("n", "<leader>ft", ":Telescope file_browser <cr>", {noremap = true, silent = true})
