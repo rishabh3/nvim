@@ -70,5 +70,6 @@ return require("packer").startup(
         use {
             "ygm2/rooter.nvim"
         }
+        use { "nvim-treesitter/nvim-treesitter" }
     end
 )
