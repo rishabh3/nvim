@@ -22,7 +22,6 @@ return require("packer").startup(
         use {"vim-airline/vim-airline-themes"}
         use {"preservim/nerdcommenter"}
         use {"ryanoasis/vim-devicons"}
-        use {"kyazdani42/nvim-web-devicons"}
         use {"morhetz/gruvbox"}
         use {"nvim-lua/plenary.nvim"}
         use {"nvim-telescope/telescope.nvim"}
@@ -52,6 +51,21 @@ return require("packer").startup(
         use {
             "lewis6991/gitsigns.nvim",
             requires = {"nvim-lua/plenary.nvim"}
+        }
+        -- Plugins for beautiful diagnostics
+        use {"kyazdani42/nvim-web-devicons"}
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require "trouble".setup {
+                    height = 20,
+                    action_keys = {
+                        open_split = {"<leader>s"},
+                        open_vsplit = {"<leader>v"}
+                    }
+                }
+            end
         }
     end
 )
