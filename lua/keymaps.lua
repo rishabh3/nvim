@@ -3,7 +3,7 @@ local map = utils.map
 
 -- Set leader key
 map("n", "<Space>", "<NOP>", {noremap = true})
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 
 map("n", "<leader>h", ":set hlsearch!<CR>", {noremap = true})
 map("n", "<leader>n", ":set nu!<CR>", {noremap = true})

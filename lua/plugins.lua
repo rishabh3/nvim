@@ -28,9 +28,8 @@ return require("packer").startup(
         use {"nvim-telescope/telescope.nvim"}
         use {"vim-test/vim-test"}
         use {"tpope/vim-dispatch"}
-        use {"tpope/vim-fugitive"}
         use {"GlennLeo/cobalt2"}
-        use {"airblade/vim-gitgutter"}
+        -- use {"airblade/vim-gitgutter"}
         use {"mileszs/ack.vim"}
         use {"b3nj5m1n/kommentary"}
         -- Plugins for completing sources
@@ -48,5 +47,11 @@ return require("packer").startup(
         -- Plugins for formatter
         use {"mhartington/formatter.nvim"}
         use {"L3MON4D3/LuaSnip"}
+        -- Plugins for git
+        use {"tpope/vim-fugitive"}
+        use {
+            "lewis6991/gitsigns.nvim",
+            requires = {"nvim-lua/plenary.nvim"}
+        }
     end
 )
