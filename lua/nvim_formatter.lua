@@ -10,7 +10,34 @@ require("formatter").setup(
                     }
                 end
             },
+            yaml = {
+                function()
+                    return {
+                        exe = "prettier",
+                        args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+                        stdin = true
+                    }
+                end
+            },
+            json = {
+                function()
+                    return {
+                        exe = "prettier",
+                        args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+                        stdin = true
+                    }
+                end
+            },
             typescript = {
+                function()
+                    return {
+                        exe = "prettier",
+                        args = {"--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+                        stdin = true
+                    }
+                end
+            },
+            markdown = {
                 function()
                     return {
                         exe = "prettier",
@@ -44,6 +71,24 @@ require("formatter").setup(
                         args = {
                             "--in-place --aggressive --aggressive",
                             vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
+                        },
+                        stdin = false
+                    }
+                end
+            },
+            java = {
+                function()
+                    return {
+                        exe = "eclipse",
+                        args = {
+                            "-vm",
+                            os.getenv("ECLIPSE_JAVA_HOME"),
+                            "-application",
+                            "org.eclipse.jdt.core.JavaCodeFormatter",
+                            "-verbose",
+                            "-config",
+                            os.getenv("HOME") .. "/formatter/CAS_Code_Formatter.xml",
+                            vim.api.nvim_buf_get_name(0)
                         },
                         stdin = false
                     }
