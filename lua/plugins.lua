@@ -75,5 +75,9 @@ return require("packer").startup(
         use {"mfussenegger/nvim-dap"}
         use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
         use {"Pocco81/DAPInstall.nvim"}
+
+        -- Java LSP
+        use {"mfussenegger/nvim-jdtls"}
+        use {"nvim-telescope/telescope-dap.nvim"}
     end
 )
