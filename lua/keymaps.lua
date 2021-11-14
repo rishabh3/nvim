@@ -79,3 +79,6 @@ map("n", "<leader>fj", ":Telescope jumplist<cr>", {noremap = true, silent = true
 map("n", "<leader>fc", ":Telescope lsp_code_actions<cr>", {noremap = true, silent = true})
 map("n", "<leader>fcs", ":Telescope colorscheme<cr>", {noremap = true, silent = true})
 map("n", "<leader>ft", ":Telescope file_browser <cr>", {noremap = true, silent = true})
+
+-- Markdown preview shortcut
+map("n", "<leader>md", ":Glow<cr>", {noremap = true, silent = true})
