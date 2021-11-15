@@ -40,7 +40,7 @@ live grep and many more.
 - **lua/nvim_lsp.lua**: Lspconfig support
 - **lua/nvim_rooter.lua**: Rooter configs
 - **lua/nvim_telescope_config.lua**: Telescope configuration
-- **lua/nvim_treesitter_config.lua**: Treesitter configuration
+- **lua/treesitter_config.lua**: Treesitter configuration
 - **lua/plugins.lua**: All plugins supported
 - **lua/settings.lua**: vim settings
 - **lua/utils/init.lua**: Utility function
