@@ -79,5 +79,11 @@ return require("packer").startup(
         -- Java LSP
         use {"mfussenegger/nvim-jdtls"}
         use {"nvim-telescope/telescope-dap.nvim"}
+
+        -- Material Theme
+        use {"kaicataldo/material.vim"}
+
+        -- Lightspeed
+        use {"ggandor/lightspeed.nvim"}
     end
 )
