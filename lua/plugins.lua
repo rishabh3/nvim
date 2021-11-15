@@ -70,6 +70,20 @@ return require("packer").startup(
         use {
             "ygm2/rooter.nvim"
         }
-        use { "nvim-treesitter/nvim-treesitter" }
+        use {"nvim-treesitter/nvim-treesitter"}
+        use {"npxbr/glow.nvim"}
+        use {"mfussenegger/nvim-dap"}
+        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+        use {"Pocco81/DAPInstall.nvim"}
+
+        -- Java LSP
+        use {"mfussenegger/nvim-jdtls"}
+        use {"nvim-telescope/telescope-dap.nvim"}
+
+        -- Material Theme
+        use {"kaicataldo/material.vim"}
+
+        -- Lightspeed
+        use {"ggandor/lightspeed.nvim"}
     end
 )
