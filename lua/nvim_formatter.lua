@@ -91,7 +91,6 @@ require("formatter").setup(
                             vim.api.nvim_buf_get_name(0) ]]
                             "-s",
                             os.getenv("HOME") .. "/formatter/CAS_Code_Formatter.xml",
-                            "-m",
                             vim.api.nvim_buf_get_name(0)
                         },
                         stdin = false
