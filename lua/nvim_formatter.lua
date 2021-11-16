@@ -79,15 +79,19 @@ require("formatter").setup(
             java = {
                 function()
                     return {
-                        exe = "eclipse",
+                        exe = "format.sh",
                         args = {
-                            "-vm",
+                            --[[ "-vm",
                             os.getenv("ECLIPSE_JAVA_HOME"),
                             "-application",
                             "org.eclipse.jdt.core.JavaCodeFormatter",
                             "-verbose",
                             "-config",
                             os.getenv("HOME") .. "/formatter/CAS_Code_Formatter.xml",
+                            vim.api.nvim_buf_get_name(0) ]]
+                            "-s",
+                            os.getenv("HOME") .. "/formatter/CAS_Code_Formatter.xml",
+                            "-m",
                             vim.api.nvim_buf_get_name(0)
                         },
                         stdin = false
