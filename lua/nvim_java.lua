@@ -25,7 +25,7 @@ function M.setup()
         buf_set_keymap("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
         buf_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
         buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-        buf_set_keymap("n", "gr", '<cmd>lua vim.lsp.buf.references() && vim.cmd("copen")<CR>', opts)
+        buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
         buf_set_keymap("n", "<leader>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
         buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
         buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
@@ -37,6 +37,10 @@ function M.setup()
         buf_set_keymap("v", "<leader>de", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
         buf_set_keymap("n", "<leader>de", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
         buf_set_keymap("v", "<leader>dm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+        buf_set_keymap("n", "<leader>ca", "<Esc><Cmd>lua require('jdtls').code_action()<CR>", opts)
+        buf_set_keymap("v", "<leader>ca", "<Esc><Cmd>lua require('jdtls').code_action(true)<CR>", opts)
+
+        buf_set_keymap("n", "<leader>r", "<Esc><Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
 
         buf_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
@@ -84,6 +88,29 @@ function M.setup()
     config.settings = {
         java = {
             signatureHelp = {enabled = true},
+            contentProvider = {preferred = "fernflower"},
+            completion = {
+                favoriteStaticMembers = {
+                    "org.hamcrest.MatcherAssert.assertThat",
+                    "org.hamcrest.Matchers.*",
+                    "org.hamcrest.CoreMatchers.*",
+                    "org.junit.jupiter.api.Assertions.*",
+                    "java.util.Objects.requireNonNull",
+                    "java.util.Objects.requireNonNullElse",
+                    "org.mockito.Mockito.*"
+                }
+            },
+            sources = {
+                organizeImports = {
+                    starThreshold = 9999,
+                    staticStarThreshold = 9999
+                }
+            },
+            codeGeneration = {
+                toString = {
+                    template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
+                }
+            },
             configuration = {
                 runtimes = {
                     {
@@ -110,10 +137,12 @@ function M.setup()
     }
 
     -- UI
-    local finders = require "telescope.finders"
+    --[[ local finders = require "telescope.finders"
     local sorters = require "telescope.sorters"
     local actions = require "telescope.actions"
     local pickers = require "telescope.pickers"
+    local action_state = require "telescope.actions.state"
+
     require("jdtls.ui").pick_one_async = function(items, prompt, label_fn, cb)
         local opts = {}
         pickers.new(
@@ -132,9 +161,10 @@ function M.setup()
                 },
                 sorter = sorters.get_generic_fuzzy_sorter(),
                 attach_mappings = function(prompt_bufnr)
-                    actions.goto_file_selection_edit:replace(
+                    actions.select_default:replace(
                         function()
-                            local selection = actions.get_selected_entry(prompt_bufnr)
+                            local selection = action_state.get_selected_entry(prompt_bufnr)
+
                             actions.close(prompt_bufnr)
 
                             cb(selection.value)
@@ -146,11 +176,14 @@ function M.setup()
             }
         ):find()
     end
-
+ ]]
     -- Debugger Support
     -- This bundles definition is the same as in the previous section (java-debug installation)
     local bundles = {
-        vim.fn.glob(home .. "/.local/java_debug/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+        vim.fn.glob(
+            home ..
+                "/.local/java_debug/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+        )
     }
 
     -- This is the new part
