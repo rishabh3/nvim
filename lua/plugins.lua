@@ -85,5 +85,14 @@ return require("packer").startup(
 
         -- Lightspeed
         use {"ggandor/lightspeed.nvim"}
+
+        -- tabline
+        use {"kdheepak/tabline.nvim"}
+
+        -- treesitter playground
+        use {"nvim-treesitter/playground"}
+
+        -- symsearch
+        use {"rishabh3/symsearch.nvim", requires = {"nvim-telescope/telescope.nvim", "nvim-treesitter/nvim-treesitter"}}
     end
 )

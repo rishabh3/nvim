@@ -93,7 +93,7 @@ require("formatter").setup(
                             os.getenv("HOME") .. "/formatter/CAS_Code_Formatter.xml",
                             vim.api.nvim_buf_get_name(0)
                         },
-                        stdin = false
+                        stdin = false 
                     }
                 end
             }

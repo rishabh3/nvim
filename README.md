@@ -24,6 +24,8 @@ live grep and many more.
 - **DAPInstall**: Install debuggers for languages
 - **Dap UI**: DAP UI support
 - **Lightspeed**: Quick search and jump in the buffer
+- **Tabline**: Tabline for clean tabs
+- **SymSearch**: SymSearch for symbol searching 
 
 ## Files and Importance
 - **lua**: Directory containing all lua configuration files.
@@ -44,6 +46,8 @@ live grep and many more.
 - **lua/plugins.lua**: All plugins supported
 - **lua/settings.lua**: vim settings
 - **lua/utils/init.lua**: Utility function
+- **lua/tabline_config.lua**: Tabline configuration
+- **lua/nvim_symsearch_config.lua**: Symsearch configuration
 - **init.lua**: Init file for neovim
 - **plugin**: Directory containing plugins for old vim based supported configs
 - **plugin/ack.vim**: Ack plugin configs
