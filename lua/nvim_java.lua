@@ -137,7 +137,7 @@ function M.setup()
     }
 
     -- UI
-    --[[ local finders = require "telescope.finders"
+    local finders = require "telescope.finders"
     local sorters = require "telescope.sorters"
     local actions = require "telescope.actions"
     local pickers = require "telescope.pickers"
@@ -176,7 +176,7 @@ function M.setup()
             }
         ):find()
     end
- ]]
+ 
     -- Debugger Support
     -- This bundles definition is the same as in the previous section (java-debug installation)
     local bundles = {

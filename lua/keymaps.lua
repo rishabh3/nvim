@@ -28,6 +28,10 @@ map("n", "<C-l>", "<C-w>l")
 map("v", "<", "<gv", {noremap = true})
 map("v", ">", ">gv", {noremap = true})
 
+-- split
+map("n", "<leader>vsp", ":vsplit<CR>", {noremap=true})
+map("n", "<leader>hsp", ":split<CR>", {noremap=true})
+
 -- Tab switch buffer
 map("n", "<leader>bn", ":bnext<CR>", {noremap = true})
 map("n", "<leader>bp", ":bprevious<CR>", {noremap = true})
