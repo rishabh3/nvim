@@ -93,5 +93,19 @@ return require("packer").startup(
 
         -- dracula colorscheme
         use {"dracula/vim"}
+
+        -- zoxide for directory traversal
+        use {"jvgrootveld/telescope-zoxide"}
+
+        -- notify plugin
+        use {"rcarriga/nvim-notify"}
+
+        -- neoclip
+        use {
+            "AckslD/nvim-neoclip.lua",
+            config = function()
+                require("neoclip").setup()
+            end
+        }
     end
 )

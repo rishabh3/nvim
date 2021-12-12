@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd -- vim command
-local g = vim.g     -- global variable
+local g = vim.g -- global variable
 
 local option = {noremap = true}
 local option_silent = {noremap = true, silent = true}
@@ -93,12 +93,7 @@ map("n", "<leader>md", ":Glow<cr>", option_silent)
 
 -- Dap
 map("n", "<leader>dh", ':lua require"dap".toggle_breakpoint()<CR>', option_silent)
-map(
-    "n",
-    "<leader>dH",
-    ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-    option_silent
-)
+map("n", "<leader>dH", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", option_silent)
 map("n", "<leader>so", ':lua require"dap".step_out()<CR>', option_silent)
 map("n", "<leader>si", ':lua require"dap".step_into()<CR>', option_silent)
 map("n", "<leader>sv", ':lua require"dap".step_over()<CR>', option_silent)
@@ -136,3 +131,6 @@ map("v", "<leader>F", ":lua vim.lsp.buf.range_formatting()<CR>", option_silent)
 map("n", "<leader>syc", ":SymClassSearch<CR>", option_silent)
 map("n", "<leader>sym", ":SymMethodSearch<CR>", option_silent)
 map("n", "<leader>syf", ":SymFieldSearch<CR>", option_silent)
+
+-- Zoxide keymaps
+map("n", "<leader>cd", ":lua require'telescope'.extensions.zoxide.list{}<CR>", option_silent)

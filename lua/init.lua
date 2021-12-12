@@ -64,7 +64,7 @@ opt.colorcolumn = "100"     -- show wrap line
 opt.termguicolors = true      -- enable 24bit colors in TUI, uses guibg/guifg
 opt.background    = 'dark'    -- set background dark/light
 cmd('colorscheme gruvbox')      -- use everforest colorscheme; plays nice with redshift
-cmd('highlight Normal guibg=NONE') -- keep transparent guibg
+--cmd('highlight Normal guibg=grey') -- keep transparent guibg
 -- highlight 81st column darkred on lines that run long
 cmd([[autocmd BufEnter,FocusGained,BufWinEnter,WinEnter * match ColorColumn "\%81v."]])
 
