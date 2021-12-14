@@ -13,12 +13,10 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         -- Packer can manage itself
-        use {"nvim-telescope/telescope-project.nvim"}
+		use 'wbthomason/packer.nvim'
         use {"scrooloose/nerdtree"}
         use {"honza/vim-snippets"}
         use {"mhinz/vim-startify"}
-        use {"vim-airline/vim-airline"}
-        use {"vim-airline/vim-airline-themes"}
         use {"preservim/nerdcommenter"}
         use {"morhetz/gruvbox"}
         use {"nvim-lua/plenary.nvim"}
@@ -107,5 +105,7 @@ return require("packer").startup(
                 require("neoclip").setup()
             end
         }
+
+		use {"voldikss/vim-floaterm"}
     end
 )

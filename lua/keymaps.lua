@@ -19,7 +19,7 @@ map("n", "yf", ":let @+=expand('%:p')<CR>", option)
 -- copies pwd to clipboard command yd
 map("n", "yd", ":let @+=expand('%:p:h')<CR>", option)
 -- nerd tree toggle
-map("n", "<leader>t", ":NERDTreeToggleVCS<CR>", option)
+map("n", "<leader>e", ":NERDTreeToggleVCS<CR>", option)
 map("n", "<leader>tf", ":NERDTreeFind %<CR>", option)
 
 -- window movement
@@ -134,3 +134,4 @@ map("n", "<leader>syf", ":SymFieldSearch<CR>", option_silent)
 
 -- Zoxide keymaps
 map("n", "<leader>cd", ":lua require'telescope'.extensions.zoxide.list{}<CR>", option_silent)
+map("n", "<leader>t", ":FloatermToggle<CR>", option_silent)
