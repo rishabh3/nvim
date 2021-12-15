@@ -13,15 +13,37 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         -- Packer can manage itself
-		use 'wbthomason/packer.nvim'
+        use "wbthomason/packer.nvim"
         use {"scrooloose/nerdtree"}
         use {"honza/vim-snippets"}
         use {"mhinz/vim-startify"}
+        use {
+            "nvim-lualine/lualine.nvim",
+            requires = {"kyazdani42/nvim-web-devicons"},
+            config = function()
+                require "lualine".setup {
+                    options = {
+                        theme = "gruvbox-material"
+                    }
+                }
+            end
+        }
         use {"preservim/nerdcommenter"}
         use {"morhetz/gruvbox"}
         use {"nvim-lua/plenary.nvim"}
         use {"nvim-telescope/telescope.nvim"}
         use {"vim-test/vim-test"}
+        use {
+            "windwp/nvim-autopairs",
+            config = function()
+                require("nvim-autopairs").setup(
+                    {
+                        disable_filetype = {"TelescopePrompt", "vim"}
+                    }
+                )
+            end
+        }
+		use {"p00f/nvim-ts-rainbow"}
         use {"tpope/vim-dispatch"}
         use {"GlennLeo/cobalt2"}
         use {"mileszs/ack.vim"}
@@ -67,7 +89,9 @@ return require("packer").startup(
         use {"nvim-treesitter/nvim-treesitter"}
         use {"npxbr/glow.nvim"}
         use {"mfussenegger/nvim-dap"}
-        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=function ()
+        	require("dapui").setup()
+        end}
         use {"Pocco81/DAPInstall.nvim"}
 
         -- Java LSP
@@ -106,6 +130,6 @@ return require("packer").startup(
             end
         }
 
-		use {"voldikss/vim-floaterm"}
+        use {"voldikss/vim-floaterm"}
     end
 )

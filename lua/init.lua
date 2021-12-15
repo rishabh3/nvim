@@ -6,6 +6,7 @@ local opt = vim.opt -- set options
 local cmd = vim.cmd -- vim command
 local home = os.getenv("HOME")  -- get home
 
+
 -- set system python3
 g.python3_host_prog = '~/.virtualenvs/py3venv/bin/python'
 
@@ -75,7 +76,7 @@ opt.list            =  false-- show whitesoace chars
 -- --  nbsp             = '␣',
 -- --  extends          = '❯',
 -- --  precedes         = '❮',
--- --  tab              = '',           
+-- --  tab              = '',
 --  eol              = '¬'
 -- }
 
