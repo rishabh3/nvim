@@ -60,6 +60,7 @@ return require("packer").startup(
         use {"neovim/nvim-lspconfig"}
         use {"williamboman/nvim-lsp-installer"}
         -- Plugins for formatter
+		use {"lukas-reineke/indent-blankline.nvim"}
         use {"mhartington/formatter.nvim"}
         use {"L3MON4D3/LuaSnip"}
         -- Plugins for git
@@ -95,7 +96,7 @@ return require("packer").startup(
         use {"Pocco81/DAPInstall.nvim"}
 
         -- Java LSP
-        use {"mfussenegger/nvim-jdtls"}
+		use {"mfussenegger/nvim-jdtls"}
         use {"nvim-telescope/telescope-dap.nvim"}
 
         -- Material Theme
@@ -131,5 +132,6 @@ return require("packer").startup(
         }
 
         use {"voldikss/vim-floaterm"}
+
     end
 )

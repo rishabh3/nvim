@@ -37,11 +37,6 @@ function M.setup()
         buf_set_keymap("v", "<leader>de", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
         buf_set_keymap("n", "<leader>de", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
         buf_set_keymap("v", "<leader>dm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-        buf_set_keymap("n", "<leader>ca", "<Esc><Cmd>lua require('jdtls').code_action()<CR>", opts)
-        buf_set_keymap("v", "<leader>ca", "<Esc><Cmd>lua require('jdtls').code_action(true)<CR>", opts)
-
-        buf_set_keymap("n", "<leader>r", "<Esc><Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
-
         buf_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
         vim.api.nvim_exec(
@@ -137,46 +132,46 @@ function M.setup()
     }
 
     -- UI
-    local finders = require "telescope.finders"
-    local sorters = require "telescope.sorters"
-    local actions = require "telescope.actions"
-    local pickers = require "telescope.pickers"
-    local action_state = require "telescope.actions.state"
+    --local finders = require "telescope.finders"
+    --local sorters = require "telescope.sorters"
+    --local actions = require "telescope.actions"
+    --local pickers = require "telescope.pickers"
+    --local action_state = require "telescope.actions.state"
 
-    require("jdtls.ui").pick_one_async = function(items, prompt, label_fn, cb)
-        local opts = {}
-        pickers.new(
-            opts,
-            {
-                prompt_title = prompt,
-                finder = finders.new_table {
-                    results = items,
-                    entry_maker = function(entry)
-                        return {
-                            value = entry,
-                            display = label_fn(entry),
-                            ordinal = label_fn(entry)
-                        }
-                    end
-                },
-                sorter = sorters.get_generic_fuzzy_sorter(),
-                attach_mappings = function(prompt_bufnr)
-                    actions.select_default:replace(
-                        function()
-                            local selection = action_state.get_selected_entry(prompt_bufnr)
+    --require("jdtls.ui").pick_one_async = function(items, prompt, label_fn, cb)
+    --local opts = {}
+    --pickers.new(
+    --opts,
+    --{
+    --prompt_title = prompt,
+    --finder = finders.new_table {
+    --results = items,
+    --entry_maker = function(entry)
+    --return {
+    --value = entry,
+    --display = label_fn(entry),
+    --ordinal = label_fn(entry)
+    --}
+    --end
+    --},
+    --sorter = sorters.get_generic_fuzzy_sorter(),
+    --attach_mappings = function(prompt_bufnr)
+    --actions.select_default:replace(
+    --function()
+    --local selection = action_state.get_selected_entry(prompt_bufnr)
 
-                            actions.close(prompt_bufnr)
+    --actions.close(prompt_bufnr)
 
-                            cb(selection.value)
-                        end
-                    )
+    --cb(selection.value)
+    --end
+    --)
 
-                    return true
-                end
-            }
-        ):find()
-    end
- 
+    --return true
+    --end
+    --}
+    --):find()
+    --end
+
     -- Debugger Support
     -- This bundles definition is the same as in the previous section (java-debug installation)
     local bundles = {
@@ -196,4 +191,4 @@ function M.setup()
     require("jdtls").start_or_attach(config)
 end
 
-M.setup()
+--M.setup()

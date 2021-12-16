@@ -6,9 +6,13 @@ local opt = vim.opt -- set options
 local cmd = vim.cmd -- vim command
 local home = os.getenv("HOME")  -- get home
 
+-- set notification function
+vim.notify = require('notify')
 
 -- set system python3
 g.python3_host_prog = '~/.virtualenvs/py3venv/bin/python'
+g.floaterm_width = 0.8
+g.floaterm_height = 0.8
 
 cmd('syntax on')
 cmd('filetype indent plugin on')
