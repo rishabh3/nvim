@@ -34,7 +34,7 @@ vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.local/java_debug/vscod
 
 require "navigator".setup(
     {
-        debug = true,
+        debug = false,
         width = 0.8,
         height = 0.4,
         preview_height = 0.45,
