@@ -133,5 +133,7 @@ return require("packer").startup(
 
         use {"voldikss/vim-floaterm"}
 
+		use {"ray-x/lsp_signature.nvim"}
+
     end
 )

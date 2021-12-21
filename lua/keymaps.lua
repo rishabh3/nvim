@@ -135,3 +135,4 @@ map("n", "<leader>syf", ":SymFieldSearch<CR>", option_silent)
 -- Zoxide keymaps
 map("n", "<leader>cd", ":lua require'telescope'.extensions.zoxide.list{}<CR>", option_silent)
 map("n", "<leader>t", ":FloatermToggle<CR>", option_silent)
+map("n", "<leader>cp", ":Telescope neoclip<CR>", option_silent)

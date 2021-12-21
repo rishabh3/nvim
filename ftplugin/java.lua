@@ -3,6 +3,7 @@ local M = {}
 function M.setup()
     local on_attach = function(client, bufnr)
         require "jdtls".setup_dap()
+		require "lsp_signature".on_attach()
         require "jdtls.setup".add_commands()
         local function buf_set_keymap(...)
             vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -121,7 +122,7 @@ function M.setup()
     config.on_attach = on_attach
 
     config.on_init = function(client, _)
-        client.notify("workspace/didChangeConfiguration", {settings = config.settings})
+        client.notify("workspace/didChangeConfiguration", {settings = client.config.settings})
     end
 
     local extendedClientCapabilities = require "jdtls".extendedClientCapabilities
@@ -191,4 +192,4 @@ function M.setup()
     require("jdtls").start_or_attach(config)
 end
 
---M.setup()
+M.setup()
