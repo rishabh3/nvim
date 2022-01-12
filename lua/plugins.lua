@@ -135,7 +135,5 @@ return require("packer").startup(
 
 		use {"ray-x/lsp_signature.nvim"}
 
-		use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
-
     end
 )

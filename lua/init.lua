@@ -116,3 +116,7 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 ]])
+
+-- fold expr
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
