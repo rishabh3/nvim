@@ -1,5 +1,0 @@
-require("plugins")
-require("init")
-require("keymaps")
-require("autocmd")
-require("autocomplete")
