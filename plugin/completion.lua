@@ -11,10 +11,12 @@ cmp.setup(
             end
         },
         mapping = {
+			["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehaviour }),
+			["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehaviour }),
             ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
             ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
             ["<C-x>"] = cmp.mapping.close(),
-            ["<C-c>"] = cmp.mapping(
+            ["<CR>"] = cmp.mapping(
                 cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Insert,
                     select = true

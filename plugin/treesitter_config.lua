@@ -1,4 +1,7 @@
-require "nvim-treesitter.configs".setup {
+local configs = require "nvim-treesitter.configs";
+
+configs.setup {
+	ensure_installed = "maintained",
     highlight = {
         enable = true,
         custom_captures = {},
@@ -14,6 +17,14 @@ require "nvim-treesitter.configs".setup {
         }
     },
     indent = {
+        enable = true
+    },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil
+    },
+    autopairs = {
         enable = true
     }
 }

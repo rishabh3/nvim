@@ -13,17 +13,37 @@ local use = require("packer").use
 return require("packer").startup(
     function()
         -- Packer can manage itself
-        use {"nvim-telescope/telescope-project.nvim"}
+        use "wbthomason/packer.nvim"
         use {"scrooloose/nerdtree"}
         use {"honza/vim-snippets"}
         use {"mhinz/vim-startify"}
-        use {"vim-airline/vim-airline"}
-        use {"vim-airline/vim-airline-themes"}
+        use {
+            "nvim-lualine/lualine.nvim",
+            requires = {"kyazdani42/nvim-web-devicons"},
+            config = function()
+                require "lualine".setup {
+                    options = {
+                        theme = "gruvbox-material"
+                    }
+                }
+            end
+        }
         use {"preservim/nerdcommenter"}
         use {"morhetz/gruvbox"}
         use {"nvim-lua/plenary.nvim"}
         use {"nvim-telescope/telescope.nvim"}
         use {"vim-test/vim-test"}
+        use {
+            "windwp/nvim-autopairs",
+            config = function()
+                require("nvim-autopairs").setup(
+                    {
+                        disable_filetype = {"TelescopePrompt", "vim"}
+                    }
+                )
+            end
+        }
+		use {"p00f/nvim-ts-rainbow"}
         use {"tpope/vim-dispatch"}
         use {"GlennLeo/cobalt2"}
         use {"mileszs/ack.vim"}
@@ -40,6 +60,7 @@ return require("packer").startup(
         use {"neovim/nvim-lspconfig"}
         use {"williamboman/nvim-lsp-installer"}
         -- Plugins for formatter
+		use {"lukas-reineke/indent-blankline.nvim"}
         use {"mhartington/formatter.nvim"}
         use {"L3MON4D3/LuaSnip"}
         -- Plugins for git
@@ -69,11 +90,13 @@ return require("packer").startup(
         use {"nvim-treesitter/nvim-treesitter"}
         use {"npxbr/glow.nvim"}
         use {"mfussenegger/nvim-dap"}
-        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+        use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=function ()
+        	require("dapui").setup()
+        end}
         use {"Pocco81/DAPInstall.nvim"}
 
         -- Java LSP
-        use {"mfussenegger/nvim-jdtls"}
+		use {"mfussenegger/nvim-jdtls"}
         use {"nvim-telescope/telescope-dap.nvim"}
 
         -- Material Theme
@@ -93,5 +116,24 @@ return require("packer").startup(
 
         -- dracula colorscheme
         use {"dracula/vim"}
+
+        -- zoxide for directory traversal
+        use {"jvgrootveld/telescope-zoxide"}
+
+        -- notify plugin
+        use {"rcarriga/nvim-notify"}
+
+        -- neoclip
+        use {
+            "AckslD/nvim-neoclip.lua",
+            config = function()
+                require("neoclip").setup()
+            end
+        }
+
+        use {"voldikss/vim-floaterm"}
+
+		use {"ray-x/lsp_signature.nvim"}
+
     end
 )
