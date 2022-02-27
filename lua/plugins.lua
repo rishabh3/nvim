@@ -91,9 +91,6 @@ return require("packer").startup(
         use {"tpope/vim-fugitive"}
         use {"lewis6991/gitsigns.nvim"}
 
-        -- Rooter for managing root
-        use {"ygm2/rooter.nvim"}
-
         -- Treesitter and plugins
         use {"nvim-treesitter/nvim-treesitter"}
         use {"nvim-treesitter/playground"}
@@ -124,5 +121,10 @@ return require("packer").startup(
         -- Diagnositcs
         use {"folke/trouble.nvim"}
 
+		-- Dispatch for async builds and test executions
+		use {"tpope/vim-dispatch"}
+
+		-- Project management
+		use {"ahmedkhalf/project.nvim"}
     end
 )

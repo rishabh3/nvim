@@ -54,6 +54,7 @@ require'telescope'.setup {
         find_files = {
             prompt_prefix = prefix,
             selection_caret = prefix,
+			hidden = true,
         },
         live_grep = {
             theme = "ivy",
@@ -130,10 +131,11 @@ require'telescope'.setup {
     }
 }
 
--- require'telescope'.load_extension('dap')
--- require'telescope'.load_extension('zoxide')
--- require("telescope").load_extension("notify")
--- require("telescope").load_extension("neoclip")
+ require'telescope'.load_extension('dap')
+ require'telescope'.load_extension('zoxide')
+ require("telescope").load_extension("notify")
+ require("telescope").load_extension("neoclip")
+ require("telescope").load_extension("projects")
 
 
 -- Keymaps for telescope

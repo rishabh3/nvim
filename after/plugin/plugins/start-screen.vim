@@ -16,6 +16,7 @@ let g:startify_bookmarks = [
             \ { 'p7': '~/Documents/codebase/CAS/cas-sec-neo4j-lib' },
             \ { 'p8': '~/Documents/codebase/CAS/cas-sec-cc-mfa' },
             \ { 'p9': '~/Documents/codebase/CAS/dal-graphql' },
+			\ { 'p10': '~/Documents/codebase/CAS/cas-sec-compliance' },
             \ { 'i': '~/.config/nvim/init.lua' },
             \ { 'z': '~/.zshrc' }
             \ ]
