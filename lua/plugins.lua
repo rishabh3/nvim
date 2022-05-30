@@ -77,6 +77,7 @@ return require("packer").startup(
         use {"ray-x/lsp_signature.nvim"}
         use {"mfussenegger/nvim-jdtls"}
         use {"mfussenegger/nvim-dap"}
+        use {"mfussenegger/nvim-dap-python"}
         use {
             "rcarriga/nvim-dap-ui",
             requires = {"mfussenegger/nvim-dap"},
@@ -84,7 +85,6 @@ return require("packer").startup(
                 require("dapui").setup()
             end
         }
-        use {"Pocco81/DAPInstall.nvim"}
         use {"nvim-telescope/telescope-dap.nvim"}
 
         -- Git
@@ -126,5 +126,8 @@ return require("packer").startup(
 
 		-- Project management
 		use {"ahmedkhalf/project.nvim"}
+
+		-- Symbol outline
+		use {"simrat39/symbols-outline.nvim"}
     end
 )

@@ -118,3 +118,6 @@ endif
 -- fold expr
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+require('me').setup()
+vim.g.statusline = require'me'.statusline()

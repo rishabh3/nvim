@@ -7,6 +7,10 @@ u.create_augroup({
     { 'BufLeave,FocusLost,InsertEnter,WinLeave', '*',   'if &nu                  | set', 'nornu | endif' },
 }, 'numbertoggle')
 
+-- lsp configs
+u.create_augroup({
+    {'FileType', 'java', 'lua', "require('me.lsp.conf').start_jdt()"},
+}, 'lsp')
 --cmd(autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif)
 --cmd(autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif)
 
