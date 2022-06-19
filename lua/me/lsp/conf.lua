@@ -52,7 +52,9 @@ local key_mappings = {
   {"document_formatting", "n", "<space>f", "<Cmd>lua vim.lsp.buf.formatting()<CR>"},
   {"document_range_formatting", "v", "<space>f", "<Esc><Cmd>lua vim.lsp.buf.range_formatting()<CR>"},
   {"find_references", "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>"},
-  {"hover", "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>"},
+  {"hover", "n", "K", "<Cmd>lua require('lspsaga.hover').render_hover_doc()<CR>"},
+  {"hover_scroll_up", "n", "<C-f>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"},
+  {"hover_scroll_down", "n", "<C-b>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"},
   {"declaration", "n", "gD",  "<Cmd>lua vim.lsp.buf.declaration()<CR>"},
   {"definition", "n", "gd",  "<Cmd>lua vim.lsp.buf.definition()<CR>"},
   {"signature_help", "i", "<c-space>",  "<Cmd>lua vim.lsp.buf.signature_help()<CR>"},
@@ -68,10 +70,10 @@ local key_mappings = {
   {"set_loclist", "n", "<space>q", "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>"},
   {"formatting", "n", "<space>f", "<Cmd>lua vim.lsp.buf.formatting()<CR>"},
   {"range_formatting", "v", "<space>f", "<Cmd>lua vim.lsp.buf.range_formatting()<CR>"},
-  {"code_action", "n", "<space>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>"},
-  {"code_action", "n", "<leader>r", "<Cmd>lua vim.lsp.buf.code_action { only = 'refactor' }<CR>"},
-  {"code_action", "v", "<space>ca", "<Esc><Cmd>lua vim.lsp.buf.range_code_action()<CR>"},
-  {"code_action", "v", "<leader>r", "<Esc><Cmd>lua vim.lsp.buf.range_code_action { only = 'refactor'}<CR>"},
+  {"code_action", "n", "<space>ca", "<Cmd>lua require('lspsaga.codeaction').code_action()<CR>"},
+  {"code_action", "n", "<leader>r", "<Cmd>lua require('lspsaga.codeaction').code_action { only = 'refactor' }<CR>"},
+  {"code_action", "v", "<space>ca", "<Esc><Cmd>lua require('lspsaga.codeaction').range_code_action()<CR>"},
+  {"code_action", "v", "<leader>r", "<Esc><Cmd>lua require('lspsaga.codeaction').range_code_action { only = 'refactor'}<CR>"},
 }
 
 

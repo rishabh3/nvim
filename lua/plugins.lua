@@ -73,6 +73,12 @@ return require("packer").startup(
 
         -- Language Server
         use {"neovim/nvim-lspconfig"}
+		use {
+			"glepnir/lspsaga.nvim",
+			config = function ()
+				require('lspsaga').init_lsp_saga()
+			end
+		}
         use {"williamboman/nvim-lsp-installer"}
         use {"ray-x/lsp_signature.nvim"}
         use {"mfussenegger/nvim-jdtls"}
@@ -86,6 +92,7 @@ return require("packer").startup(
             end
         }
         use {"nvim-telescope/telescope-dap.nvim"}
+		use {'neoclide/coc.nvim', branch = 'release'}
 
         -- Git
         use {"tpope/vim-fugitive"}

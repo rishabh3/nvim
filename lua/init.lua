@@ -121,3 +121,5 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 require('me').setup()
 vim.g.statusline = require'me'.statusline()
+
+vim.cmd("source $HOME/.config/nvim/lua/coc/config.vim")
